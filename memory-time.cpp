@@ -45,7 +45,7 @@ unsigned long long strToInt(string s) {
     return i;
 }
 
-string getProcMemory(){
+string getProcMemoryUsage(){
     struct rusage r_usage;
     getrusage(RUSAGE_SELF,&r_usage);
     string strMemUsage = to_string(r_usage.ru_maxrss);
@@ -62,7 +62,7 @@ int main()
        computation();
        high_resolution_clock::time_point t2 = high_resolution_clock::now();
        duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
-       cout<<getProcMemory()<<" "<<time_span.count()<<endl;
+       cout<<getProcMemoryUsage()<<" "<<time_span.count()<<endl;
    }
    return true;
 }
