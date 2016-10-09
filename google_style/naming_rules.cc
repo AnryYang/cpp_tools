@@ -58,4 +58,5 @@ class UrlTable{
         DISALLOW_COPY_AND_ASSIGN(UrlTable);
 };
 
-
+#undef PI_ROUND
+#undef DISALLOW_COPY_AND_ASSIGN
